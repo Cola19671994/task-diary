@@ -1,0 +1,205 @@
+:root {
+    --primary-color: #546792;
+    --text-color: #ffffff;
+    --delete-button-background: #FF0000;
+    --checkbox-checked-background: #546791;
+    --checkbox-border-color: #000;
+    --checkbox-text-color: #fff;
+    --default-border-color: #000;
+    --error-color: #FF0000;
+    --modal-overlay: rgba(84, 103, 145, 0.6);
+}
+
+html {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.tasks__wrapper {
+    max-width: 70%;
+    width: 100%;
+}
+
+.tasks__wrapper_hidden {
+    display: none;
+}
+
+.create-task-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.create-task-block__input {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-size: 2rem;
+    line-height: 2.5rem;
+    height: 40px;
+    width: 50%;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+.create-task-block__button {
+    height: 44px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    cursor: pointer;
+}
+
+.task-item {
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item__main-content {
+    display: flex;
+    align-items: center;
+}
+
+.task-item__text {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.task-item__delete-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.task-item__delete-button:hover {
+    background-color: var(--delete-button-background);
+}
+
+.modal-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--modal-overlay);
+    z-index: 1000;
+    transition: 0.2s ease;
+    opacity: 1;
+}
+
+.modal-overlay_hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.delete-modal {
+    padding: 15px 25px;
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+
+.delete-modal__question {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: var(--text-color);
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.delete-modal__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-modal__button {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    background: none;
+    color: var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.delete-modal__confirm-button {
+    background-color: var(--delete-button-background);
+    border: 1px solid var(--delete-button-background);
+}
+
+.delete-modal__button:hover {
+    box-shadow: 0 0 0 1px var(--text-color);
+}
+
+.error-message-block {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--error-color);
+}
+
+
+body.light-theme {
+    background: initial;
+}
+
+.task-item.light-theme {
+    color: initial;
+}
+
+button.light-theme {
+    border: none;
+}
+
+
+body.dark-theme {
+    background: #24292E;
+}
+
+.task-item.dark-theme {
+    color: #ffffff;
+}
+
+button.dark-theme {
+    border: 1px solid #ffffff;
+}
